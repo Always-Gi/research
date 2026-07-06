@@ -22,33 +22,25 @@ repository               : "Always-Gi/research"
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
-  # Biographic information
-  avatar           : "profile.png"
-  name             : "HangGi Cho"
-  pronouns         :  # example: "she/her"  
-  bio: | 
-    HangGi Cho (조항기)
-    
-    B.S. Student
-    Mathematics & Applied Statistics
-    Yonsei University
-    
-    Research Interests
-    • Operations Research
-    • Optimization
-    • Applied Probability
+  avatar: "profile.png"
+  name: "HangGi Cho"
+  pronouns:
+
+  bio: >
+    <strong>HangGi Cho (조항기)</strong><br><br>
+    B.S. Student<br>
+    Mathematics & Applied Statistics<br>
+    Yonsei University<br><br>
+    <strong>Research Interests</strong><br>
+    • Operations Research<br>
+    • Optimization<br>
+    • Applied Probability<br>
     • Quantitative Finance
 
- 
-
-  
-
-  
-  
-  location         : "Seoul, South Korea"
-  employer         : 
-  uri              : # URL
-  email            : "dabicho33@gmail.com" 
+  location: "Seoul, South Korea"
+  employer:
+  uri:
+  email: "dabicho33@gmail.com"
 
   # Academic websites
   academia         : # URL
