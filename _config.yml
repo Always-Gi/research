@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "HangGi Cho | Research"
 title_separator          : "|"
 name                     : &name "HangGi Cho"
-description              : &description "Research homepage of HangGi Cho, undergraduate student in Mathematics and Applied Statistics at Yonsei University."   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Research homepage of HangGi Cho, undergraduate student in Mathematics & Applied Statistics at Yonsei University."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://always-gi.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "/research"
