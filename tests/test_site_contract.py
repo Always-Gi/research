@@ -89,5 +89,43 @@ class SiteContentContractTests(unittest.TestCase):
         self.assertEqual(manuscript.read_bytes()[:4], b"%PDF")
 
 
+class AcademicLayoutContractTests(unittest.TestCase):
+    def test_visible_pages_share_the_academic_layout(self):
+        for path in ("_pages/about.md", "_pages/publications.html", "_pages/cv.md"):
+            self.assertRegex(read(path), r"(?m)^layout:\s*academic\s*$")
+
+    def test_layout_and_masthead_supply_semantic_landmarks(self):
+        layout = read("_layouts/academic.html")
+        masthead = read("_includes/masthead.html")
+        self.assertIn('<main class="academic-main"', layout)
+        self.assertIn("{{ content }}", layout)
+        self.assertIn("<nav", masthead)
+
+    def test_academic_styles_are_loaded_last(self):
+        imports = read("assets/css/main.scss")
+        self.assertRegex(imports, r'"layout/academic"\s*;\s*$')
+
+    def test_academic_styles_cover_accessible_responsive_layout(self):
+        styles = read("_sass/layout/_academic.scss")
+        self.assertIn(".academic-portrait", styles)
+        self.assertIn(".academic-hero", styles)
+        self.assertIn(".publication-entry", styles)
+        self.assertIn(".academic-cv", styles)
+        self.assertIn(".masthead", styles)
+        self.assertIn(":focus-visible", styles)
+        self.assertRegex(styles, r"@media\s*(?:screen\s*and\s*)?\(max-width:\s*700px\)")
+        self.assertNotIn("gradient(", styles)
+
+    def test_masthead_does_not_expose_a_theme_toggle(self):
+        self.assertNotIn("theme-toggle", read("_includes/masthead.html"))
+
+    def test_footer_is_concise_and_personal(self):
+        footer = read("_includes/footer.html")
+        self.assertIn("HangGi Cho", footer)
+        self.assertIn("Yonsei University", footer)
+        self.assertNotIn("Powered by", footer)
+        self.assertNotIn("sitemap", footer.lower())
+
+
 if __name__ == "__main__":
     unittest.main()
