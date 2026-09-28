@@ -1,36 +1,27 @@
 ---
-layout: archive
+layout: academic
 title: "Publications"
 permalink: /publications/
-author_profile: true
+description: "Research manuscripts by HangGi Cho."
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<header class="academic-page-header">
+  <p class="academic-kicker">Research</p>
+  <h1>Publications</h1>
+</header>
 
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+<article class="publication-entry">
+  <p class="publication-status">Manuscript · Under review</p>
+  <h2>Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?</h2>
+  <p class="publication-authors">Jinwoong Park and <strong>Hanggi Cho*</strong></p>
+  <p class="publication-venue">Under review at <em>Statistics &amp; Probability Letters</em></p>
+  <p class="publication-note"><span aria-hidden="true">*</span>Corresponding author</p>
+  <p>
+    We construct a counterexample showing that, within natural exponential
+    families, the expected length of an exact equal-tailed confidence interval
+    need not decrease monotonically as the sample size increases.
+  </p>
+  <p class="publication-links">
+    <a href="{{ '/files/cho-confidence-interval-manuscript.pdf' | relative_url }}">Manuscript PDF</a>
+  </p>
+</article>

@@ -1,64 +1,46 @@
 ---
-layout: archive
+layout: academic
 title: "CV"
 permalink: /cv/
-author_profile: true
+description: "Curriculum vitae of HangGi Cho."
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+<header class="academic-page-header">
+  <p class="academic-kicker">Curriculum Vitae</p>
+  <h1>HangGi Cho</h1>
+  <p>Undergraduate Student in Mathematics and Applied Statistics</p>
+  <p>Yonsei University · Seoul, South Korea</p>
+</header>
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+<div class="academic-cv">
+  <section class="academic-section" aria-labelledby="cv-education">
+    <h2 id="cv-education">Education</h2>
+    <p><strong>Yonsei University</strong><br>Undergraduate study in Mathematics and Applied Statistics</p>
+  </section>
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+  <section class="academic-section" aria-labelledby="cv-interests">
+    <h2 id="cv-interests">Research Interests</h2>
+    <p>Operations Research · Optimization · Applied Probability · Quantitative Finance</p>
+  </section>
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+  <section class="academic-section" aria-labelledby="cv-publications">
+    <h2 id="cv-publications">Manuscript</h2>
+    <p>
+      Jinwoong Park and <strong>Hanggi Cho*</strong>.
+      “Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?”
+      Under review at <em>Statistics &amp; Probability Letters</em>.
+      <a href="{{ '/files/cho-confidence-interval-manuscript.pdf' | relative_url }}">PDF</a>
+    </p>
+  </section>
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+  <section class="academic-section" aria-labelledby="cv-contact">
+    <h2 id="cv-contact">Contact</h2>
+    <p>
+      <a href="mailto:dabicho33@gmail.com">dabicho33@gmail.com</a><br>
+      <a href="https://github.com/Always-Gi" rel="noopener noreferrer">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/hanggi-cho-268119409/" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+  </section>
+</div>
