@@ -1,8 +1,8 @@
-# HangGi Cho Academic Homepage Redesign
+# Hanggi Cho Academic Homepage Redesign
 
 ## Purpose
 
-Transform the current Academic Pages starter site into a restrained academic homepage inspired by Dabeen Lee's site. The result should present HangGi Cho as an undergraduate researcher without imitating faculty titles, lab sections, teaching history, or publication volume that do not apply.
+Transform the current Academic Pages starter site into a restrained academic homepage inspired by Dabeen Lee's site. The result should present Hanggi Cho as an undergraduate researcher without imitating faculty titles, lab sections, teaching history, or publication volume that do not apply.
 
 ## Information Architecture
 
@@ -37,7 +37,7 @@ The Publications page contains the current manuscript. The CV page replaces all 
 Show:
 
 - Portrait
-- HangGi Cho
+- Hanggi Cho
 - Undergraduate Student in Mathematics and Applied Statistics
 - Yonsei University
 - Existing public contact email from the repository
@@ -47,7 +47,7 @@ Do not display a faculty title, office, laboratory, group, teaching role, or ins
 
 ### About
 
-Use a short first-person biography stating that HangGi Cho is an undergraduate student at Yonsei University studying Mathematics and Applied Statistics. Avoid unsupported claims, awards, dates, or positions.
+Use a short first-person biography stating that Hanggi Cho is an undergraduate student at Yonsei University studying Mathematics and Applied Statistics. Avoid unsupported claims, awards, dates, or positions.
 
 ### Research Interests
 
@@ -69,7 +69,7 @@ Jinwoong Park and **Hanggi Cho***
 Under review at *Statistics & Probability Letters*  
 *Corresponding author*
 
-Provide a link to the manuscript PDF. Preserve the author order shown in the manuscript. Bold HangGi Cho's name and identify the corresponding-author role.
+Provide a link to the manuscript PDF. Preserve the author order shown in the manuscript. Bold Hanggi Cho's name and identify the corresponding-author role.
 
 Do not publish a detailed first-person contribution claim unless both authors have agreed to that wording. Describe the paper's result in one neutral sentence.
 

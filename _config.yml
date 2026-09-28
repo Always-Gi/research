@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "HangGi Cho"
+title                    : "Hanggi Cho"
 title_separator          : "|"
-name                     : &name "HangGi Cho"
-description              : &description "Research homepage of HangGi Cho, undergraduate student in Mathematics & Applied Statistics at Yonsei University."   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Hanggi Cho"
+description              : &description "Research homepage of Hanggi Cho, undergraduate student in Mathematics & Applied Statistics at Yonsei University."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://always-gi.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "/research"
@@ -23,7 +23,7 @@ repository               : "Always-Gi/research"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   avatar: "profile.png"
-  name: "HangGi Cho"
+  name: "Hanggi Cho"
   pronouns:
 
   bio: "Undergraduate Student in Mathematics and Applied Statistics at Yonsei University."

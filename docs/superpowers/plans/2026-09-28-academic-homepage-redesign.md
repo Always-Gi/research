@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace the Academic Pages demo content with a restrained three-page academic website for HangGi Cho.
+**Goal:** Replace the Academic Pages demo content with a restrained three-page academic website for Hanggi Cho.
 
 **Architecture:** Keep the existing Jekyll and GitHub Pages foundation, but introduce one focused `academic` layout and scoped SCSS for all visible pages. Store verified content in the existing `_pages` files, keep site-wide identity in `_config.yml`, and make the manuscript a versioned file under `files/`.
 
@@ -70,7 +70,7 @@ Expected: failures for the current seven-item navigation, template Home copy, fi
 
 - [ ] **Step 3: Replace configuration, navigation, and page content**
 
-Set the site title to `HangGi Cho`, retain the approved description and repository paths, and replace the multi-line sidebar biography with the confirmed undergraduate identity. Replace navigation with the exact three items. Rewrite Home, Publications, and CV with only the approved sections and verified facts; use `{{ '/path/' | relative_url }}` for internal links and assets.
+Set the site title to `Hanggi Cho`, retain the approved description and repository paths, and replace the multi-line sidebar biography with the confirmed undergraduate identity. Replace navigation with the exact three items. Rewrite Home, Publications, and CV with only the approved sections and verified facts; use `{{ '/path/' | relative_url }}` for internal links and assets.
 
 - [ ] **Step 4: Add the manuscript and remove demo content**
 

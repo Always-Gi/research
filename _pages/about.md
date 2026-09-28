@@ -2,51 +2,63 @@
 layout: academic
 permalink: /
 title: "Home"
-description: "Academic homepage of HangGi Cho, an undergraduate student in Mathematics and Applied Statistics at Yonsei University."
+description: "Academic homepage of Hanggi Cho, an undergraduate student in Mathematics and Applied Statistics at Yonsei University."
+hide_masthead: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-<header class="academic-hero">
-  <img
-    class="academic-portrait"
-    src="{{ '/profile.png' | relative_url }}"
-    alt="Portrait of HangGi Cho"
-  >
-
-  <div class="academic-identity">
-    <p class="academic-kicker">Undergraduate Researcher</p>
-    <h1>HangGi Cho</h1>
-    <p class="academic-role">Undergraduate Student in Mathematics and Applied Statistics</p>
-    <p class="academic-affiliation">Yonsei University</p>
-    <p class="academic-contact">
-      <a href="mailto:dabicho33@gmail.com">dabicho33@gmail.com</a>
+<header class="simple-profile">
+  <div class="simple-profile__text">
+    <h1>Hanggi Cho</h1>
+    <p class="simple-meta">Email: <a href="mailto:dabicho33@gmail.com">dabicho33@gmail.com</a></p>
+    <p class="simple-links">
+      <a href="{{ '/output/pdf/hanggi-cho-cv.pdf' | relative_url }}">[cv.pdf]</a>
+      <a href="https://github.com/Always-Gi" rel="noopener noreferrer">[GitHub]</a>
+      <a href="https://www.linkedin.com/in/hanggi-cho-268119409/" rel="noopener noreferrer">[LinkedIn]</a>
     </p>
-    <nav class="academic-profile-links" aria-label="Profile links">
-      <a href="https://github.com/Always-Gi" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/hanggi-cho-268119409/" rel="noopener noreferrer">LinkedIn</a>
-      <a href="{{ '/cv/' | relative_url }}">CV</a>
-    </nav>
   </div>
+
+  <img
+    class="simple-portrait"
+    src="{{ '/profile.png' | relative_url }}"
+    alt="Portrait of Hanggi Cho"
+  >
 </header>
 
-<section class="academic-section" aria-labelledby="about-heading">
-  <h2 id="about-heading">About</h2>
+<div class="simple-intro">
   <p>
-    I am an undergraduate student at Yonsei University, double majoring in
-    Mathematics and Applied Statistics. I am interested in mathematically
-    rigorous approaches to decision-making under uncertainty and in problems
-    that connect theoretical ideas with practical applications.
+    Hi, I am an undergraduate student at Yonsei University, double majoring in
+    Mathematics and Applied Statistics.
   </p>
-</section>
+  <p>
+    I am interested in mathematically rigorous approaches to decision-making
+    under uncertainty and in problems that connect theoretical ideas with
+    practical applications.
+  </p>
+</div>
 
-<section class="academic-section" aria-labelledby="research-heading">
+<section class="simple-section" aria-labelledby="research-heading">
   <h2 id="research-heading">Research Interests</h2>
-  <ul class="research-interest-list">
+  <ul class="simple-interest-list">
     <li>Operations Research</li>
     <li>Optimization</li>
     <li>Applied Probability</li>
     <li>Quantitative Finance</li>
   </ul>
+</section>
+
+<section class="simple-section" aria-labelledby="publications-heading">
+  <h2 id="publications-heading">Publications</h2>
+  <ol class="simple-publications">
+    <li class="simple-publication">
+      <a href="{{ '/files/cho-confidence-interval-manuscript.pdf' | relative_url }}">
+        Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?
+      </a>
+      <p>Jinwoong Park and <strong>Hanggi Cho*</strong></p>
+      <p><em>Statistics &amp; Probability Letters</em>, under review.</p>
+      <small>* Corresponding author</small>
+    </li>
+  </ol>
 </section>
