@@ -123,6 +123,11 @@ class AcademicLayoutContractTests(unittest.TestCase):
         imports = read("assets/css/main.scss")
         self.assertRegex(imports, r'"layout/academic"\s*;\s*$')
 
+    def test_main_stylesheet_is_cache_busted_per_deployment(self):
+        head = read("_includes/head.html")
+        self.assertIn("site.github.build_revision", head)
+        self.assertRegex(head, r"main\.css\?v=\{\{\s*asset_version\s*\}\}")
+
     def test_academic_styles_cover_accessible_responsive_layout(self):
         styles = read("_sass/layout/_academic.scss")
         self.assertIn(".simple-profile", styles)
