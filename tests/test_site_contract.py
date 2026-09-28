@@ -69,6 +69,7 @@ class SiteContentContractTests(unittest.TestCase):
         config = read("_config.yml")
         self.assertRegex(config, r'(?m)^baseurl\s*:\s*["\']/research["\']')
         self.assertRegex(config, r'(?m)^repository\s*:\s*["\']Always-Gi/research["\']')
+        self.assertNotIn('href="/images/favicon.ico"', read("_includes/head/custom.html"))
 
     def test_visible_pages_do_not_contain_template_demo_people(self):
         visible = "\n".join(
@@ -114,6 +115,10 @@ class AcademicLayoutContractTests(unittest.TestCase):
         self.assertIn(".masthead", styles)
         self.assertIn(":focus-visible", styles)
         self.assertRegex(styles, r"@media\s*(?:screen\s*and\s*)?\(max-width:\s*700px\)")
+        self.assertRegex(
+            styles,
+            r"(?s)@media\s*\(max-width:\s*700px\).*?\.masthead__menu-item--lg\s*\{\s*display:\s*none",
+        )
         self.assertNotIn("gradient(", styles)
 
     def test_masthead_does_not_expose_a_theme_toggle(self):
@@ -125,6 +130,58 @@ class AcademicLayoutContractTests(unittest.TestCase):
         self.assertIn("Yonsei University", footer)
         self.assertNotIn("Powered by", footer)
         self.assertNotIn("sitemap", footer.lower())
+
+
+class GeneratedSiteContractTests(unittest.TestCase):
+    def test_expected_public_files_are_generated(self):
+        expected = (
+            "_site/index.html",
+            "_site/publications/index.html",
+            "_site/cv/index.html",
+            "_site/profile.png",
+            "_site/files/cho-confidence-interval-manuscript.pdf",
+        )
+        for path in expected:
+            self.assertTrue((ROOT / path).is_file(), f"missing generated file: {path}")
+
+    def test_generated_pages_use_repository_safe_internal_urls(self):
+        for path in (
+            "_site/index.html",
+            "_site/publications/index.html",
+            "_site/cv/index.html",
+        ):
+            html = read(path)
+            self.assertRegex(html, r'href="(?:https?://[^"/]+)?/research/"')
+            self.assertRegex(
+                html,
+                r'href="(?:https?://[^"/]+)?/research/publications/"',
+            )
+            self.assertRegex(
+                html, r'href="(?:https?://[^"/]+)?/research/cv/"'
+            )
+        self.assertIn('src="/research/profile.png"', read("_site/index.html"))
+        self.assertIn('href="/research/images/favicon.ico"', read("_site/index.html"))
+        self.assertIn(
+            'href="/research/files/cho-confidence-interval-manuscript.pdf"',
+            read("_site/publications/index.html"),
+        )
+
+    def test_generated_visible_pages_have_no_demo_identity(self):
+        generated = "\n".join(
+            read(path)
+            for path in (
+                "_site/index.html",
+                "_site/publications/index.html",
+                "_site/cv/index.html",
+            )
+        )
+        for fake in (
+            "GitHub University",
+            "Professor Hub",
+            "Professor Git",
+            "Academic Pages is a ready-to-fork",
+        ):
+            self.assertNotIn(fake, generated)
 
 
 if __name__ == "__main__":

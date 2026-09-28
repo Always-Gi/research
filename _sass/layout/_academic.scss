@@ -283,6 +283,10 @@ button:focus-visible {
     padding-left: 1rem;
   }
 
+  .masthead__menu-item--lg {
+    display: none !important;
+  }
+
   .academic-main {
     padding: 7.2rem 1.15rem 2.5rem;
   }
