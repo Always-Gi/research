@@ -132,6 +132,7 @@ class AcademicLayoutContractTests(unittest.TestCase):
         self.assertNotIn("sitemap", footer.lower())
 
 
+@unittest.skipUnless((ROOT / "_site").is_dir(), "generated site has not been built")
 class GeneratedSiteContractTests(unittest.TestCase):
     def test_expected_public_files_are_generated(self):
         expected = (
