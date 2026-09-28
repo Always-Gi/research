@@ -19,6 +19,8 @@
 - List the manuscript with its real author order and the status `Under review at Statistics & Probability Letters`.
 - Do not invent dates, GPA, awards, employment, teaching, service, or technical skills.
 - Do not publish an individual contribution claim without coauthor-approved wording.
+- Preserve the four existing research interests exactly: `Operations Research`, `Optimization`, `Applied Probability`, and `Quantitative Finance`.
+- Keep the confidence-interval manuscript on Publications; do not add statistics as a separate research-interest label.
 - Remove visible Academic Pages sample content and sample navigation.
 
 ## Review Focus

@@ -47,18 +47,18 @@ Do not display a faculty title, office, laboratory, group, teaching role, or ins
 
 ### About
 
-Use a short first-person biography stating that HangGi Cho is an undergraduate student at Yonsei University studying Mathematics and Applied Statistics. Mention an interest in mathematically rigorous approaches to statistical inference, optimization, probability, and quantitative problems. Avoid unsupported claims, awards, dates, or positions.
+Use a short first-person biography stating that HangGi Cho is an undergraduate student at Yonsei University studying Mathematics and Applied Statistics. Avoid unsupported claims, awards, dates, or positions.
 
 ### Research Interests
 
-Present four concise themes:
+Preserve the four existing research interests exactly:
 
-- Statistics and statistical inference
-- Operations research and optimization
-- Applied probability
-- Quantitative finance
+- Operations Research
+- Optimization
+- Applied Probability
+- Quantitative Finance
 
-Mention the current work on expected confidence-interval length and natural exponential families as an example of ongoing theoretical statistics research. Do not reproduce the manuscript abstract verbatim.
+Do not add statistics or statistical inference as a separate research-interest label. The confidence-interval manuscript belongs on the Publications page rather than in this section.
 
 ## Publications Page
 
