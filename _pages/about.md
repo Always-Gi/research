@@ -43,22 +43,7 @@ redirect_from:
   <h2 id="research-heading">Research Interests</h2>
   <ul class="simple-interest-list">
     <li>Operations Research</li>
-    <li>Optimization</li>
-    <li>Applied Probability</li>
+    <li>Machine Learning</li>
     <li>Quantitative Finance</li>
   </ul>
-</section>
-
-<section class="simple-section" aria-labelledby="publications-heading">
-  <h2 id="publications-heading">Publications</h2>
-  <ol class="simple-publications">
-    <li class="simple-publication">
-      <a href="{{ '/files/cho-confidence-interval-manuscript.pdf' | relative_url }}">
-        Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?
-      </a>
-      <p>Jinwoong Park and <strong>Hanggi Cho*</strong></p>
-      <p><em>Statistics &amp; Probability Letters</em>, under review.</p>
-      <small>* Corresponding author</small>
-    </li>
-  </ol>
 </section>

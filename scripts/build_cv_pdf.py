@@ -86,14 +86,6 @@ def build_cv() -> None:
         textColor=INK,
         spaceAfter=4,
     )
-    small = ParagraphStyle(
-        "Small",
-        parent=body,
-        fontSize=8.5,
-        leading=12.5,
-        textColor=MUTED,
-    )
-
     story = [
         Paragraph("Hanggi Cho", name),
         Paragraph(
@@ -115,8 +107,8 @@ def build_cv() -> None:
         Paragraph("Research Interests", section),
         Table(
             [
-                [Paragraph("&#8226;&nbsp; Operations Research", body), Paragraph("&#8226;&nbsp; Optimization", body)],
-                [Paragraph("&#8226;&nbsp; Applied Probability", body), Paragraph("&#8226;&nbsp; Quantitative Finance", body)],
+                [Paragraph("&#8226;&nbsp; Operations Research", body), Paragraph("&#8226;&nbsp; Machine Learning", body)],
+                [Paragraph("&#8226;&nbsp; Quantitative Finance", body), ""],
             ],
             colWidths=[78 * mm, 78 * mm],
             style=TableStyle(
@@ -129,17 +121,6 @@ def build_cv() -> None:
                 ]
             ),
         ),
-        Paragraph("Manuscript", section),
-        Paragraph(
-            "Jinwoong Park and <b>Hanggi Cho*</b>. "
-            '“Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?”',
-            body,
-        ),
-        Paragraph(
-            "Under review at <i>Statistics &amp; Probability Letters</i>.",
-            body,
-        ),
-        Paragraph("* Corresponding author", small),
     ]
 
     doc.build(story)

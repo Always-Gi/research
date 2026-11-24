@@ -19,7 +19,7 @@ class SiteContentContractTests(unittest.TestCase):
     def test_home_has_identity_and_only_the_approved_sections(self):
         home = read("_pages/about.md")
         self.assertIn("Research Interests", home)
-        self.assertIn("Publications", home)
+        self.assertNotIn("Publications", home)
         self.assertNotIn("Academic Pages is a ready-to-fork", home)
         self.assertIn("profile.png", home)
         self.assertRegex(home, r'alt="(?!profile(?: image)?")[^"]{8,}"')
@@ -29,32 +29,46 @@ class SiteContentContractTests(unittest.TestCase):
         self.assertIn("github.com/Always-Gi", home)
         self.assertIn("linkedin.com/in/hanggi-cho-268119409", home)
         self.assertIn("'/output/pdf/hanggi-cho-cv.pdf' | relative_url", home)
-        self.assertIn("Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?", home)
+        self.assertNotIn("Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?", home)
 
-    def test_research_interests_preserve_the_existing_four_labels(self):
+    def test_research_interests_use_the_approved_three_labels(self):
         home = read("_pages/about.md")
         for interest in (
             "Operations Research",
-            "Optimization",
-            "Applied Probability",
+            "Machine Learning",
             "Quantitative Finance",
         ):
             self.assertIn(interest, home)
-        self.assertNotIn("Statistics and Statistical Inference", home)
+        for removed_interest in (
+            "Optimization",
+            "Applied Probability",
+            "Statistics and Statistical Inference",
+        ):
+            self.assertNotIn(removed_interest, home)
 
-    def test_publications_lists_the_verified_manuscript(self):
-        publications = read("_pages/about.md")
-        self.assertIn(
-            "Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?",
-            publications,
-        )
-        self.assertIn(
-            "Jinwoong Park and <strong>Hanggi Cho*</strong>", publications
-        )
-        self.assertIn("Statistics &amp; Probability Letters", publications)
-        self.assertIn("under review", publications.lower())
-        self.assertIn("Corresponding author", publications)
-        self.assertIn("'/files/cho-confidence-interval-manuscript.pdf' | relative_url", publications)
+    def test_rejected_manuscript_is_not_publicly_claimed(self):
+        public_text = "\n".join(
+            (read("_pages/about.md"), read("scripts/build_cv_pdf.py"))
+        ).lower()
+        for stale_claim in (
+            "does a larger sample size always lead to shorter confidence intervals?",
+            "statistics &amp; probability letters",
+            "under review",
+            "corresponding author",
+        ):
+            self.assertNotIn(stale_claim, public_text)
+        self.assertFalse((ROOT / "files/cho-confidence-interval-manuscript.pdf").exists())
+
+    def test_cv_uses_the_same_three_research_interests(self):
+        generator = read("scripts/build_cv_pdf.py")
+        for interest in (
+            "Operations Research",
+            "Machine Learning",
+            "Quantitative Finance",
+        ):
+            self.assertIn(interest, generator)
+        self.assertNotIn("Applied Probability", generator)
+        self.assertNotIn("Optimization", generator)
 
     def test_cv_link_opens_a_versioned_pdf_directly(self):
         home = read("_pages/about.md")
@@ -96,12 +110,6 @@ class SiteContentContractTests(unittest.TestCase):
         for directory in ("_publications", "_talks", "_teaching", "_portfolio", "_posts"):
             entries = [path for path in (ROOT / directory).glob("*") if path.is_file()]
             self.assertEqual(entries, [], f"demo entries remain in {directory}: {entries}")
-
-    def test_versioned_manuscript_is_a_pdf(self):
-        manuscript = ROOT / "files/cho-confidence-interval-manuscript.pdf"
-        self.assertTrue(manuscript.exists())
-        self.assertEqual(manuscript.read_bytes()[:4], b"%PDF")
-
 
 class AcademicLayoutContractTests(unittest.TestCase):
     def test_visible_pages_share_the_academic_layout(self):
@@ -155,7 +163,6 @@ class GeneratedSiteContractTests(unittest.TestCase):
         expected = (
             "_site/index.html",
             "_site/profile.png",
-            "_site/files/cho-confidence-interval-manuscript.pdf",
             "_site/output/pdf/hanggi-cho-cv.pdf",
         )
         for path in expected:
@@ -173,10 +180,8 @@ class GeneratedSiteContractTests(unittest.TestCase):
             )
         self.assertIn('src="/research/profile.png"', read("_site/index.html"))
         self.assertIn('href="/research/images/favicon.ico"', read("_site/index.html"))
-        self.assertIn(
-            'href="/research/files/cho-confidence-interval-manuscript.pdf"',
-            read("_site/index.html"),
-        )
+        self.assertNotIn("Publications", read("_site/index.html"))
+        self.assertNotIn("cho-confidence-interval-manuscript.pdf", read("_site/index.html"))
 
     def test_generated_visible_pages_have_no_demo_identity(self):
         generated = "\n".join(
