@@ -114,7 +114,7 @@ def build_cv() -> None:
         Table(
             [
                 [Paragraph("&#8226;&nbsp; Operations Research", body), Paragraph("&#8226;&nbsp; Machine Learning", body)],
-                [Paragraph("&#8226;&nbsp; Quantitative Finance", body), ""],
+                [Paragraph("&#8226;&nbsp; Quantitative Finance", body), Paragraph("&#8226;&nbsp; Statistics", body)],
             ],
             colWidths=[78 * mm, 78 * mm],
             style=TableStyle(

@@ -45,5 +45,6 @@ redirect_from:
     <li>Operations Research</li>
     <li>Machine Learning</li>
     <li>Quantitative Finance</li>
+    <li>Statistics</li>
   </ul>
 </section>

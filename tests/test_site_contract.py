@@ -31,12 +31,13 @@ class SiteContentContractTests(unittest.TestCase):
         self.assertIn("'/output/pdf/hanggi-cho-cv.pdf' | relative_url", home)
         self.assertNotIn("Does a Larger Sample Size Always Lead to Shorter Confidence Intervals?", home)
 
-    def test_research_interests_use_the_approved_three_labels(self):
+    def test_research_interests_use_the_approved_labels(self):
         home = read("_pages/about.md")
         for interest in (
             "Operations Research",
             "Machine Learning",
             "Quantitative Finance",
+            "<li>Statistics</li>",
         ):
             self.assertIn(interest, home)
         for removed_interest in (
@@ -59,12 +60,13 @@ class SiteContentContractTests(unittest.TestCase):
             self.assertNotIn(stale_claim, public_text)
         self.assertFalse((ROOT / "files/cho-confidence-interval-manuscript.pdf").exists())
 
-    def test_cv_uses_the_same_three_research_interests(self):
+    def test_cv_uses_the_same_research_interests(self):
         generator = read("scripts/build_cv_pdf.py")
         for interest in (
             "Operations Research",
             "Machine Learning",
             "Quantitative Finance",
+            "&#8226;&nbsp; Statistics",
         ):
             self.assertIn(interest, generator)
         self.assertNotIn("Applied Probability", generator)
