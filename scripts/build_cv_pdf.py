@@ -104,6 +104,12 @@ def build_cv() -> None:
         Paragraph("Education", section),
         Paragraph("<b>Yonsei University</b>", body),
         Paragraph("Undergraduate study in Mathematics and Applied Statistics", body),
+        Paragraph("Coursework completed through Spring 2026", body),
+        Paragraph("Overall GPA: 4.17/4.30 &nbsp;&nbsp;|&nbsp;&nbsp; Major GPA: 4.10/4.30", body),
+        Paragraph("Honors and Awards", section),
+        Paragraph("Spring 2026 &mdash; Academic Excellence Award", body),
+        Paragraph("Fall 2025 &mdash; Academic Excellence Award", body),
+        Paragraph("Spring 2025 &mdash; Highest Academic Excellence Award", body),
         Paragraph("Research Interests", section),
         Table(
             [
