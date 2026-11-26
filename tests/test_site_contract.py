@@ -23,7 +23,7 @@ class SiteContentContractTests(unittest.TestCase):
         self.assertNotIn("Academic Pages is a ready-to-fork", home)
         self.assertIn("profile.png", home)
         self.assertRegex(home, r'alt="(?!profile(?: image)?")[^"]{8,}"')
-        self.assertIn("undergraduate student", home.lower())
+        self.assertIn("I’m an undergraduate at Yonsei University, double majoring in Mathematics and Applied Statistics.", home)
         self.assertIn("Yonsei University", home)
         self.assertIn("dabicho33@gmail.com", home)
         self.assertIn("github.com/Always-Gi", home)

@@ -29,13 +29,7 @@ redirect_from:
 
 <div class="simple-intro">
   <p>
-    Hi, I am an undergraduate student at Yonsei University, double majoring in
-    Mathematics and Applied Statistics.
-  </p>
-  <p>
-    I am interested in mathematically rigorous approaches to decision-making
-    under uncertainty and in problems that connect theoretical ideas with
-    practical applications.
+    I’m an undergraduate at Yonsei University, double majoring in Mathematics and Applied Statistics.
   </p>
 </div>
 
